@@ -109,7 +109,7 @@ public class RadioTest {
     @Test
     public void shouldToStayTen() {
         Radio rad = new Radio();
-        rad.setVolumeSound(10);
+        rad.setVolumeSound(9);
 
         rad.increaseVolume();
 
@@ -135,11 +135,11 @@ public class RadioTest {
     @Test
     public void shouldToDecreaseVolume() {
         Radio rad = new Radio();
-        rad.setVolumeSound(1);
+        rad.setVolumeSound(100);
 
         rad.descreaseVolume();
 
-        int expected = 0;
+        int expected = 99;
         int actual = rad.getVolumeSound();
 
         Assertions.assertEquals(expected, actual);
@@ -159,12 +159,12 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldToVolume() { 
+    public void shouldToVolume() {
         Radio rad = new Radio();
 
-        rad.setVolumeSound(11);
+        rad.setVolumeSound(27);
 
-        int expected = 0;
+        int expected = 27;
         int actual = rad.getVolumeSound();
 
         Assertions.assertEquals(expected, actual);

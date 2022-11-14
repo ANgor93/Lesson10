@@ -1,24 +1,45 @@
 package RadioSettings;
+
 public class Radio {
     private int stationNumber;
+    private int volumeSound;
+    private int maxStation;
+    private int maxVolume = 100;
+    private int minVolume = 0;
+
+    public Radio() {
+        maxStation = 9;
+
+
+    }
+    public Radio(int stationsCount) {
+        maxStation = stationsCount - 1;
+
+    }
 
     public int getStationNumber() {
         return stationNumber;
     }
 
+    public int getVolumeSound() {
+        return volumeSound;
+    }
+
     public void setStationNumber(int newStationNumber) {
+
         if (newStationNumber < 0) {
             return;
         }
-        if (newStationNumber > 9) {
+        if (newStationNumber > maxStation) {
             return;
         }
         stationNumber = newStationNumber;
+
     }
 
     public void nextStationNumber() { // Следующая радиостанция
-        if (stationNumber < 9) {
-            stationNumber = stationNumber + 1;
+        if (stationNumber < maxStation) {
+            stationNumber++;
         } else {
             stationNumber = 0;
         }
@@ -26,37 +47,33 @@ public class Radio {
 
     public void prevStationNumber() { // Предыдущая радиостанция
         if (stationNumber > 0) {
-            stationNumber = stationNumber - 1;
+            stationNumber--;
         } else {
-            stationNumber = 9;
+            stationNumber = maxStation;
         }
     }
 
-    private int volumeSound;
-
-    public int getVolumeSound() {
-        return volumeSound;
-    }
 
     public void setVolumeSound(int newVolumeSound) {
-        if (newVolumeSound < 0) {
+
+        if (newVolumeSound < minVolume) {
             return;
         }
-        if (newVolumeSound > 10) {
+        if (newVolumeSound > maxVolume) {
             return;
         }
         volumeSound = newVolumeSound;
     }
 
     public void increaseVolume() { // Увеличение громкости
-        if (volumeSound < 10) {
-            volumeSound = volumeSound + 1;
+        if (volumeSound < maxVolume) {
+             volumeSound++;
         }
     }
 
     public void descreaseVolume() { // Уменьшение громкости
-        if (volumeSound > 0) {
-            volumeSound = volumeSound - 1;
+        if (volumeSound > minVolume) {
+            volumeSound--;
         }
     }
 
