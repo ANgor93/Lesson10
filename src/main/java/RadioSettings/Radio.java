@@ -61,7 +61,7 @@ public class Radio {
             return;
         }
         if (newVolumeSound > maxVolume) {
-            return;
+            newVolumeSound = maxVolume;
         }
         volumeSound = newVolumeSound;
     }

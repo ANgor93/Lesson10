@@ -112,9 +112,9 @@ public class RadioTest {
     public void shouldSetVolume() { // уровень звука
         Radio rad = new Radio();
 
-        rad.setVolumeSound(10);
+        rad.setVolumeSound(101);
 
-        int expected = 10;
+        int expected = 100;
         int actual = rad.getVolumeSound();
 
         Assertions.assertEquals(expected, actual);
