@@ -1,9 +1,23 @@
 package RadioTest;
+
 import RadioSettings.Radio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+    @Test
+    public void test(){
+        Radio rad = new Radio(20);
+
+        rad.setStationNumber(15);
+
+        int expected = 15;
+        int actual = rad.getStationNumber();
+
+        Assertions.assertEquals(expected, actual);
+
+
+    }
 
     @Test
     public void shouldSetStation() {
@@ -98,9 +112,9 @@ public class RadioTest {
     public void shouldSetVolume() { // уровень звука
         Radio rad = new Radio();
 
-        rad.setVolumeSound(10);
+        rad.setVolumeSound(101);
 
-        int expected = 10;
+        int expected = 100;
         int actual = rad.getVolumeSound();
 
         Assertions.assertEquals(expected, actual);
@@ -109,7 +123,7 @@ public class RadioTest {
     @Test
     public void shouldToStayTen() {
         Radio rad = new Radio();
-        rad.setVolumeSound(10);
+        rad.setVolumeSound(9);
 
         rad.increaseVolume();
 
@@ -135,11 +149,11 @@ public class RadioTest {
     @Test
     public void shouldToDecreaseVolume() {
         Radio rad = new Radio();
-        rad.setVolumeSound(1);
+        rad.setVolumeSound(100);
 
         rad.descreaseVolume();
 
-        int expected = 0;
+        int expected = 99;
         int actual = rad.getVolumeSound();
 
         Assertions.assertEquals(expected, actual);
@@ -159,12 +173,12 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldToVolume() { 
+    public void shouldToVolume() {
         Radio rad = new Radio();
 
-        rad.setVolumeSound(11);
+        rad.setVolumeSound(27);
 
-        int expected = 0;
+        int expected = 27;
         int actual = rad.getVolumeSound();
 
         Assertions.assertEquals(expected, actual);
