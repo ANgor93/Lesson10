@@ -1,9 +1,23 @@
 package RadioTest;
+
 import RadioSettings.Radio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+    @Test
+    public void test(){
+        Radio rad = new Radio(20);
+
+        rad.setStationNumber(15);
+
+        int expected = 15;
+        int actual = rad.getStationNumber();
+
+        Assertions.assertEquals(expected, actual);
+
+
+    }
 
     @Test
     public void shouldSetStation() {

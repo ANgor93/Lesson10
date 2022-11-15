@@ -12,6 +12,7 @@ public class Radio {
 
 
     }
+
     public Radio(int stationsCount) {
         maxStation = stationsCount - 1;
 
@@ -67,7 +68,7 @@ public class Radio {
 
     public void increaseVolume() { // Увеличение громкости
         if (volumeSound < maxVolume) {
-             volumeSound++;
+            volumeSound++;
         }
     }
 
